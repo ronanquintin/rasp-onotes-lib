@@ -6,35 +6,55 @@
 # $* 	Le nom du fichier sans suffixe
 
 
+# Workspace definitions
+SRCDIR=src
+HEADDIR=include
+OBJDIR=object
+BINDIR=bin
+
+OUTPUTS_DIRS=$(OBJDIR) $(BINDIR)
 
 
+# Artifacts definition
 
+SRC= $(wildcard $(SRCDIR)/*.cpp)
+OBJ= $(SRC:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
+BIN=rasp-onotes-lib
 
-
-PROJECT_ROOT = $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-SRC= $(wildcard src/*.cpp)
-OBJ= $(SRC:.cpp=.o)
-EXEC=rasp-onotes-lib
-BUILD_DIR=build
-
+# Compilation and link options
 CXX=g++
 CXXFLAGS=-W -Wall -ansi -pedantic -std=c++0x
 LDFLAGS=-lwiringPi
 
+# Build all
+all:  $(BIN)
 
-all: $(EXEC)
-
-$(EXEC): $(OBJ)
-	$(CXX) -o $@ $^ $(CXXFLAGS) $(LDFLAGS)
-
-
-%.o: %.c
-	$(CXX) -o $@ -c $< $(CXXFLAGS)
-
-.PHONY: clean mrproper
-
+# Building final binary
+$(BIN): $(OBJ)
+	$(CXX) -o $(BINDIR)/$@ $^ $(CXXFLAGS) $(LDFLAGS)
+	
+	
+# Build objects files 
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp
+	$(CXX) -o $@ -c $< $(CFLAGS)
+	
 clean:
-	rm -rf *.o
-
-mrproper: clean
-	rm -rf $(EXEC)
+	rm $(OBJDIR)/*.o $(BINDIR)/*
+ 
+mrproper:
+	rm -rf $(BINDIR) $(OBJDIR)
+	
+	
+$(shell mkdir -p $(OUTPUTS_DIRS))	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
