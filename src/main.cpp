@@ -1,16 +1,17 @@
 #include <iostream>
 
-#include "Gpio.h"
+#include "Led.h"
+#include "Pin.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
 
+	Pin pin(0);
+	Led redLed(&pin);
 
-	cout << argc;
-	cout << argv;
+	redLed.on();
 
 
-	cout << "Hello world";
 	return 0;
 }
