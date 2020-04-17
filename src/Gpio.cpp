@@ -1,5 +1,5 @@
 #include "Gpio.h"
-#include "wiringPi.h"
+#include <wiringPi.h>
 
 
 Gpio::Gpio() {
@@ -13,5 +13,10 @@ Gpio::~Gpio() {
 	for(int i=0; i<m_pinsLength; i++){
 		delete m_pins[i];
 	}
+}
+
+
+Pin* Gpio::getPinByWiringPiIndex(int wiringPiIndex){
+	return 0;
 }
 

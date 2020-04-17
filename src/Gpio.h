@@ -17,6 +17,8 @@ private:
 public:
 	Gpio();
 	virtual ~Gpio();
+
+	Pin* getPinByWiringPiIndex(int wiringPiIndex);
 };
 
 #endif /* GPIO_H_ */
