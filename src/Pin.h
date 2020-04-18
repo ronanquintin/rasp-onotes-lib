@@ -3,7 +3,7 @@
 #define DEVICE_PIN_H_
 
 #include <string>
-#include <wiringPi.h>
+
 
 enum class PinType{
 	PT_GPIO,
@@ -16,16 +16,22 @@ enum class PinType{
 
 };
 
+std::string pinTypeAsString(PinType pinType);
+
 enum class PinMode{
 	PM_IN,
 	PM_OUT
 };
+
+std::string pinModeAsString(PinMode pinMode);
 
 
 enum class PinDigitalValue {
 	PDV_LOW,
 	PDV_HIGH
 };
+std::string pinDigitalValueAsString(PinDigitalValue pinDigitalValue);
+
 
 class Pin {
 private:
@@ -52,6 +58,22 @@ public:
 
 	void setMode(PinMode mode);
 	void writePin(PinDigitalValue value);
+
+	void syncStateFromGPIO();
+
+	std::string toString();
+	std::string getPinTypeAsString();
+	std::string getCurrentModeAsString();
+	std::string getCurrentDigitalValueAsString();
+
+
+
+	PinMode getCurrentMode() const;
+	PinDigitalValue getCurrentPinDigitalValue() const;
+	std::string getPinName() const;
+	int getPinNumber() const;
+	PinType getPinType() const;
+	int getWiringPiNumber() const;
 };
 
 

@@ -3,7 +3,6 @@
 #define GPIO_H_
 
 #include "Pin.h"
-#include <wiringPi.h>
 
 class Gpio {
 

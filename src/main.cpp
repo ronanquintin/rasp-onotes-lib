@@ -6,15 +6,12 @@
 #include "Led.h"
 #include "Gpio.h"
 
-using namespace std;
 
 int main(int argc, char **argv) {
 
 
 		Gpio gpio;
 		Led redLed(gpio.getPin(11));
-
-		redLed.on();
 
 		while(true){
 			redLed.on();
