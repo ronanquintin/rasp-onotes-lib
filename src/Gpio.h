@@ -3,7 +3,7 @@
 #define GPIO_H_
 
 #include "Pin.h"
-
+#include <wiringPi.h>
 
 class Gpio {
 
@@ -14,11 +14,13 @@ private:
 
 	Pin* m_pins[m_pinsLength];
 
+
+
 public:
 	Gpio();
 	virtual ~Gpio();
 
-	Pin* getPinByWiringPiIndex(int wiringPiIndex);
+	Pin* getPin(int physicalPinNumber);
 };
 
 #endif /* GPIO_H_ */

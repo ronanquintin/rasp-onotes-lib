@@ -15,3 +15,16 @@ Then
 ```sh
 make
 ```
+
+
+# Webliography ressources
+
+C++ Singleton : 
+* <https://stackoverflow.com/questions/1008019/c-singleton-design-pattern>
+
+Raspberry pins description : 
+ * <https://www.raspberrypi.org/documentation/usage/gpio/>
+ * <https://pinout.xyz/#>
+
+Markdown Cheatsheet :
+* <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>

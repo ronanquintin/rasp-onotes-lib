@@ -1,19 +1,29 @@
 #include <iostream>
-#include <wiringPi.h>
+#include <thread>
+#include <chrono>
+
 
 #include "Led.h"
-#include "Pin.h"
+#include "Gpio.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
 
-	wiringPiSetup () ;
 
-	Pin pin(0);
-	Led redLed(&pin);
+		Gpio gpio;
+		Led redLed(gpio.getPin(11));
 
-	redLed.on();
+		redLed.on();
+
+		while(true){
+			redLed.on();
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+			redLed.off();
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+		}
+
 
 
 	return 0;

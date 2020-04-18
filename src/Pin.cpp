@@ -1,12 +1,13 @@
 
 #include "Pin.h"
-#include <wiringPi.h>
 
 
 
-
-Pin::Pin(int pinNumber) {
+Pin::Pin(int pinNumber,  int wiringPiNumber, std::string pinName,PinType pinType) {
 	m_pinNumber = pinNumber;
+	m_pinName = pinName;
+	m_wiringPiNumber = wiringPiNumber;
+	m_pinType = pinType;
 
 }
 
@@ -15,7 +16,7 @@ Pin::~Pin() {
 
 void Pin::writePin(PinDigitalValue value){
 
-	digitalWrite(m_pinNumber, (value == PinDigitalValue::PDV_LOW )? 0 : 1 );
+	digitalWrite(m_wiringPiNumber, (value == PinDigitalValue::PDV_LOW )? 0 : 1 );
 }
 
 void Pin::setMode(PinMode mode){
@@ -30,7 +31,7 @@ void Pin::setMode(PinMode mode){
 	default:
 		break;
 	}
-	pinMode(m_pinNumber, wiringPiMode) ;
+	pinMode(m_wiringPiNumber, wiringPiMode) ;
 }
 
 
