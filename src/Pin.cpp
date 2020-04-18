@@ -44,9 +44,10 @@ void Pin::setMode(PinMode mode){
 
 
 void Pin::syncStateFromGPIO(){
-	std::cout << "Syncing pin state current real physical state" << std::endl;
+	std::cout << "Syncing pin state current real physical state" ;
 	m_currentMode = getAlt(m_wiringPiNumber) == 0 ? PinMode::PM_IN : PinMode::PM_OUT;
 	m_currentPinDigitalValue = digitalRead(m_wiringPiNumber) == 0 ? PinDigitalValue::PDV_LOW : PinDigitalValue::PDV_HIGH;
+	std::cout << toString() << std::endl;
 }
 
 std::string Pin::toString(){
