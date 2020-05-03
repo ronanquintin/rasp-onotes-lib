@@ -27,10 +27,10 @@ CXXFLAGS=-W -Wall -ansi -pedantic -std=c++0x
 LDFLAGS=-lwiringPi
 
 # Build all
-all:  $(BIN)
+all:	$(BIN)
 
 # Building final binary
-$(BIN): $(OBJ)
+$(BIN):	$(OBJ)
 	$(CXX) -o $(BINDIR)/$@ $^ $(CXXFLAGS) $(LDFLAGS)
 	
 	
