@@ -1,0 +1,4 @@
+all:	vl53l0x
+
+vl53l0x:
+	$(MAKE) -C vl53l0x
