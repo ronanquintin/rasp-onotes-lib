@@ -33,3 +33,5 @@
 .project
 .cproject
 /build/
+/object/
+/objects/
