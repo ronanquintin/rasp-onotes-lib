@@ -1,10 +1,24 @@
 # rasp-onotes-lib
 
-Contains Raspberry related content. Contains C++ material to drive my RaspberryPI with it. Released under GNU GPLv3 licence. 
+Contains Raspberry related content. Contains Java, C++ sources material to drive my RaspberryPI with it. Also contains some hardware (sensors, engines, etc...) documentation. Released under GNU GPLv3 licence. 
 
+# My Raspberries
 
-# Compile
+I've got a Raspberry Pi 2 model B V1.1
 
+# Java code
+
+The Java source code is located in rasp-onotes-lib/sources/java
+
+## Pi4jv2
+
+I'm using pi4j v2 in order to use Java 11, even if this version is not stable. 
+
+# C++ code
+
+The C++ source code is located into rasp-onotes-lib/sources/cplusplus
+ 
+## Compile
 This program is written in C++ (version 11) and need wiringPi to compile. I've compile it on Raspbian without any prerequisite, but as I write and work on my Ubuntu and then compile and execute code on my Raspberry Pi I had to install devlopment libraries first :
 
 ```sh
@@ -25,7 +39,7 @@ And simply execute the binary :
 ```
 
 
-# Libraries
+## Libraries
 
  * WiringPi
  
@@ -34,6 +48,9 @@ And simply execute the binary :
 As it is said at <http://wiringpi.com/> : *WiringPi is a PIN based GPIO access library written in C for the BCM2835, BCM2836 and BCM2837 SoC devices used in all Raspberry Pi*. I don't know much about this library or it's author "Gordon". I just can say that it is released under the GNU Lesser Public License version 3, and that Gordon seems to make some good looking bread.
 
 # Webliography ressources
+
+Pi4jv2 : 
+ * <https://v2.pi4j.com>
 
 C++ Singleton : 
 * <https://stackoverflow.com/questions/1008019/c-singleton-design-pattern>

@@ -35,3 +35,11 @@
 /build/
 /object/
 /objects/
+/.metadata
+/sources/java/raspoji/.project
+/sources/java/raspoji/.settings
+/sources/java/raspoji/hardware-library/.gitignore
+/sources/java/raspoji/hardware-library/.project
+/sources/java/raspoji/hardware-library/.settings
+/sources/java/raspoji/hardware-library/target
+/sources/java/raspoji/hardware-library/.classpath
