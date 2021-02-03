@@ -14,6 +14,20 @@ The Java source code is located in rasp-onotes-lib/sources/java
 
 I'm using pi4j v2 in order to use Java 11, even if this version is not stable. 
 
+It depends on wiringPi which is installed on the raspianOS, and of course Java. To install java you have to execute thoses commands :
+
+```sh
+sudo apt update
+sudo apt install openjdk-8-jdk
+```
+
+And then install pi4J to launch the java code :
+
+```sh
+curl -sSL https://pi4j.com/install | sudo bash
+```
+
+
 # C++ code
 
 The C++ source code is located into rasp-onotes-lib/sources/cplusplus

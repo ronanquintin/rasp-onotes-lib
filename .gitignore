@@ -43,3 +43,7 @@
 /sources/java/raspoji/hardware-library/.settings
 /sources/java/raspoji/hardware-library/target
 /sources/java/raspoji/hardware-library/.classpath
+/sources/java/raspoji/packaging/.settings
+/sources/java/raspoji/packaging/target
+/sources/java/raspoji/starter/.settings
+sources/java/raspoji/starter/.classpath
