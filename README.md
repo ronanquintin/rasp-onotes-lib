@@ -8,7 +8,7 @@ I've got a Raspberry Pi 2 model B V1.1
 
 # Java code
 
-The Java source code is located in rasp-onotes-lib/sources/java
+The Java source code is located in rasp-onotes-lib/sources/java, this project is named "Raspoji"
 
 ## Pi4jv2
 
@@ -27,6 +27,28 @@ And then install pi4J to launch the java code :
 curl -sSL https://pi4j.com/install | sudo bash
 ```
 
+## Raspoji
+
+The raspoji code is packaged with maven, it has to be installed : 
+
+```sh
+sudo apt update
+sudo apt -y install maven
+```
+
+Then simply go to rasp-onotes-lib/sources/java/raspoji and type :
+
+```sh
+mvn clean install
+```
+
+And then 
+
+```sh
+cd packaging/target/raspoji/
+chmod u+x launch-raspoji.sh
+./launch-raspoji.sh
+```
 
 # C++ code
 

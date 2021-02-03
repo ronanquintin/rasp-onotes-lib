@@ -14,7 +14,7 @@
 
 	<build>
 
-		<finalName>Raspoji</finalName>
+		<finalName>raspoji</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -30,7 +30,7 @@
 					<descriptors>
 						<descriptor>src/main/packaging/assembly/assembly.xml</descriptor>
 					</descriptors>
-					<finalName>Raspoji</finalName>
+					<finalName>raspoji</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 				</configuration>
 			</plugin>
