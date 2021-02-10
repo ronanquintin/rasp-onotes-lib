@@ -47,3 +47,5 @@
 /sources/java/raspoji/packaging/target
 /sources/java/raspoji/starter/.settings
 sources/java/raspoji/starter/.classpath
+/sources/java/raspoji/definition/.settings
+/sources/java/raspoji/definition/.classpath
