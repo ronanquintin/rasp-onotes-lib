@@ -8,6 +8,7 @@ import org.raspoji.sensors.Sensor;
 
 import com.pi4j.io.gpio.GpioPinDigitalInput;
 import com.pi4j.io.gpio.GpioPinDigitalOutput;
+import com.pi4j.io.gpio.PinPullResistance;
 
 public class HCSR04Sensor implements Sensor{
 	
@@ -24,6 +25,7 @@ public class HCSR04Sensor implements Sensor{
 		super();
 		this.trigger = trigger;
 		this.echo = echo;
+		this.echo.setPullResistance(PinPullResistance.PULL_DOWN);
 		this.listener = new HCSR04EchoListener();
 		this.echo.addListener(this.listener);
 	}
@@ -36,15 +38,13 @@ public class HCSR04Sensor implements Sensor{
 		
 		// Send an impulse during 10 micro seconds
 		this.trigger.high();
-		try {
-			Thread.sleep(0, TEN_MICROSECONDS);
-		} catch (InterruptedException e) {
-			throw new MeasureException(e);
-		}
+		sleepTenMicroseconds();
 		
 		this.trigger.low();
 		
-		
+		while(!this.listener.isMeasureAvailable()) {
+			sleepTenMicroseconds();
+		}
 	
 		long oneWayEchoDuration  = this.listener.getInterval() / 2;
 		
@@ -53,6 +53,16 @@ public class HCSR04Sensor implements Sensor{
 		double distanceInCentimeters = distanceInMeters * 100; 
 
 		return Quantity.of(LengthUnit.CM, distanceInCentimeters);
+	}
+
+
+
+	private void sleepTenMicroseconds() throws MeasureException {
+		try {
+			Thread.sleep(0, TEN_MICROSECONDS);
+		} catch (InterruptedException e) {
+			throw new MeasureException(e);
+		}
 	}
 
 }
