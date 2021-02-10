@@ -22,13 +22,14 @@ public class Main {
 		
 		
 		
-		
+		logger.info("Provisionning GPIO trigger");
 		GpioPinDigitalOutput  trigger = gpio.provisionDigitalOutputPin(
 				RaspiPin.GPIO_00,             // PIN NUMBER
 				"trigger",
 				PinState.LOW
 				); 
 		
+		logger.info("Provisionning GPIO echo");
 		GpioPinDigitalInput echo = gpio.provisionDigitalInputPin(
 				RaspiPin.GPIO_02,
 				"echo"
@@ -40,7 +41,8 @@ public class Main {
 			try {
 				Quantity quantity = sensor.doMeasure();
 				logger.info("Distance {} {}",  quantity.getAmount(), quantity.getUnit().toString());
-			} catch (MeasureException e) {
+				Thread.sleep(1000);
+			} catch (MeasureException | InterruptedException e) {
 				logger.error("Error while measuring because of {}", e.getMessage());
 			}
 			
