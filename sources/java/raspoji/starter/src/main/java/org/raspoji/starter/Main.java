@@ -2,7 +2,7 @@ package org.raspoji.starter;
 
 import org.raspoji.quantities.Quantity;
 import org.raspoji.sensors.MeasureException;
-import org.raspoji.sensors.impl.HCSR04;
+import org.raspoji.sensors.hcsr04.HCSR04Sensor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,7 +35,7 @@ public class Main {
 				"echo"
 				);
 
-		HCSR04 sensor = new HCSR04(trigger, echo);
+		HCSR04Sensor sensor = new HCSR04Sensor(trigger, echo);
 		
 		while (!Thread.interrupted()) {
 			try {
