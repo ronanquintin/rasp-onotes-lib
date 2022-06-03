@@ -1,0 +1,20 @@
+﻿  Validation des sources
+  Copie des sources à distance vers '192.168.1.138'
+  Validation de l'architecture
+  Validation de l'architecture
+  Démarrage de la build distante
+  Compilation des sources :
+  Gpio.cpp
+  HCSR04UltrasonicSensor.cpp
+D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\HCSR04UltrasonicSensor.cpp(54,9): warning : conversion from ‘long long int’ to ‘double’ may change value [-Wconversion]
+D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\HCSR04UltrasonicSensor.cpp(54,9): warning :    54 |  return elaspedTimeInMilliseconds * 17.0;
+D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\HCSR04UltrasonicSensor.cpp(54,9): warning :       |         ^~~~~~~~~~~~~~~~~~~~~~~~~
+D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\HCSR04UltrasonicSensor.cpp(54,35): warning : conversion from ‘double’ to ‘int’ may change value [-Wfloat-conversion]
+D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\HCSR04UltrasonicSensor.cpp(54,35): warning :    54 |  return elaspedTimeInMilliseconds * 17.0;
+D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\HCSR04UltrasonicSensor.cpp(54,35): warning :       |         ~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+  Led.cpp
+  main.cpp
+  Pin.cpp
+  Liaison des objets
+  Rasponote.vcxproj -> D:\dev\workspaces\rasponote\rasp-onotes-lib\sources\cplusplus\Rasponote\bin\ARM\Debug\Rasponote.out
+  Appel de 'gpio export 17 out'. Répertoire de travail : '/home/ronan/projects/Rasponote/'
